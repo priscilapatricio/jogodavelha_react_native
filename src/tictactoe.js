@@ -1,10 +1,10 @@
 export default {
     board:['','','','','','','','',''],
-    simbols:{
-        options: ['X','O'],
+    symbols:{
+        options: ['0','X'],
         turn_index: 0,
         change: function(){
-            this.turn_index = (this.turn_index === 0 ? 1: 0);
+            this.turn_index = (this.turn_index === 0 ? 1:0);
         }
     },
     gameover: false,
@@ -19,28 +19,29 @@ export default {
         [2,4,6]
     ],
 
-    make_play: function(position){
-        if(this.gameover) return false;
-        if(this.board[position] === ''){
-            this.board[position] = this.simbols.options [ this.simbols.turn_index ];
-            let winning_sequences_index = this.check_winning_sequences ( this.simbols.options [ this.simbols.turn_index ]);
-            if(winning_sequences_index >= 0){
+    make_play: function(position) {
+        if (this.gameover) return false;
+        if (this.board[position] === ''){
+            this.board[position] = this.symbols.options[this.symbols.turn_index];
+            let winning_sequences_index = this.check_winning_sequences( this.symbols.options[this.symbols.turn_index] );
+            if (winning_sequences_index >= 0){
                 this.game_is_over();
-            } else {
-                this.simbols.change();
+            } else{
+                this.symbols.change();
             }
-            return true;    
-        } else {
+            return true;
+        }
+        else {
             return false;
         }
     },
 
-    check_winnig_sequences: function(simbol){
-        for( i in this.winning_sequences ){
-            if(this.board [this.winning_sequences[i][0]] == simbol &&
-               this.board [this.winning_sequences[i][1]] == simbol &&
-               this.board [this.winning_sequences[i][2]] == simbol){
-               console.log('Sequência vencedora:' + i);
+    check_winning_sequences: function(symbol){
+        for( const i in this.winning_sequences ){
+            if(this.board [this.winning_sequences[i][0]] == symbol &&
+               this.board [this.winning_sequences[i][1]] == symbol &&
+               this.board [this.winning_sequences[i][2]] == symbol){
+               console.log('winning sequences INDEX:' + i);
             return i;               
             }
         };
