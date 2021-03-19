@@ -56,5 +56,6 @@ export default {
     start: function(){
         this.board.fill('');
         this.gameover = false;
-    },
+    }
+
 };

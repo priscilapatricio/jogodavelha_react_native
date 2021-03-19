@@ -34,9 +34,10 @@ import tictactoe from './src/tictactoe';
     })
   }
 
+
   isGameOver(){
     if(this.state.gameOver){
-      return <Text>Game Over</Text>
+     return <Text style={styles.gameOver}>Game Over</Text>
     }
   }
 
@@ -74,12 +75,11 @@ import tictactoe from './src/tictactoe';
      justifyContent: 'center',
      alignItems: 'center',
      alignContent: 'center',
-     backgroundColor: '#F5FCFF'
    },
    piece: {
      width: Dimensions.get('window').width / 3,
      height: Dimensions.get('window').width / 3,
-     backgroundColor: "#ddd",
+     backgroundColor: "#BCFF57",
      alignItems: 'center',
      justifyContent: 'center',
 
@@ -87,6 +87,13 @@ import tictactoe from './src/tictactoe';
      borderColor: "#111"
    },
    pieceText: {
-     fontSize: 60 
+     fontSize: 60, 
+     color: '#B30428'
+   },
+   gameOver: {
+    fontSize: 30,
+    marginTop: 10,
+    color: 'red',
    }
+
  });
