@@ -9,7 +9,7 @@
 <br>
 
 <p align="center">
-  <img alt="Login" src="/titactoe.gif" width="40%"><br>
+  <img alt="tictactoe" src="/tictactoe.gif" width="40%"><br>
 </p>
 
 ## APP - Game Tic Tac Toe (Jogo da Velha)
